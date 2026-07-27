@@ -1,0 +1,22 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+.idea/
+*.log
+*.tmp
+*.docx
+*.pdf
+
+# Keep generated or local content out of the repository
+raw/
+data/embeddings/
+assets/files/

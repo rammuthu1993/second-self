@@ -25,7 +25,7 @@ from typing import Optional
 import requests
 
 from config import FILES_DIR, RAW_DIR, ensure_directories
-from utils.ids import generate_id, timestamp_now, capture_filename, slugify, short_id
+from utils.ids import generate_id, timestamp_now, capture_filename, short_id
 from utils.markdown import write_note
 
 
@@ -34,7 +34,7 @@ def _write_raw(markdown_path: Path, frontmatter: dict, body: str) -> None:
     print(f"Wrote raw capture: {markdown_path}")
 
 
-def capture_note(text: str, source: str = "cli") -> Path:
+def capture_note(text: str, source: str = "cli", *, classify: bool = False, project_root: Path | None = None) -> Path:
     note_id = generate_id()
     fname = capture_filename(note_id=note_id) + ".md"
     path = RAW_DIR / fname
@@ -50,6 +50,16 @@ def capture_note(text: str, source: str = "cli") -> Path:
     body = text.strip() + "\n"
     ensure_directories()
     _write_raw(path, frontmatter, body)
+
+    if classify:
+        try:
+            from classify import classify_capture
+
+            project_root = project_root or Path(__file__).resolve().parent
+            classify_capture(path, project_root=project_root)
+        except Exception as exc:
+            print(f"Warning: classification skipped: {exc}")
+
     return path
 
 
@@ -172,6 +182,7 @@ def main(argv: list[str] | None = None) -> int:
 
     p_note = sub.add_parser("note", help="Capture a quick note")
     p_note.add_argument("text", help="Note text", nargs="+")
+    p_note.add_argument("--wiki", action="store_true", help="Also classify the note into wiki")
 
     p_link = sub.add_parser("link", help="Capture a web link")
     p_link.add_argument("url", help="URL to capture")
@@ -184,7 +195,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "note":
         text = " ".join(args.text)
         try:
-            p = capture_note(text)
+            p = capture_note(text, classify=args.wiki)
             print(p)
             return 0
         except Exception as e:

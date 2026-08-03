@@ -15,14 +15,15 @@ def text_hash(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def embedding_path(note_id: str) -> Path:
+def embedding_path(note_id: str, embeddings_dir: Path | None = None) -> Path:
     """Return path to cached embedding JSON for a note."""
-    return EMBEDDINGS_DIR / f"{note_id}.json"
+    target_dir = embeddings_dir or EMBEDDINGS_DIR
+    return target_dir / f"{note_id}.json"
 
 
-def load_embedding(note_id: str) -> dict[str, Any] | None:
+def load_embedding(note_id: str, embeddings_dir: Path | None = None) -> dict[str, Any] | None:
     """Load cached embedding for a note, or None if missing."""
-    path = embedding_path(note_id)
+    path = embedding_path(note_id, embeddings_dir)
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
@@ -33,25 +34,27 @@ def save_embedding(
     vector: list[float],
     model: str,
     content: str,
+    embeddings_dir: Path | None = None,
 ) -> dict[str, Any]:
     """Save embedding vector and metadata to cache."""
-    EMBEDDINGS_DIR.mkdir(parents=True, exist_ok=True)
+    target_dir = embeddings_dir or EMBEDDINGS_DIR
+    target_dir.mkdir(parents=True, exist_ok=True)
     payload = {
         "note_id": note_id,
         "model": model,
         "vector": vector,
         "text_hash": text_hash(content),
     }
-    embedding_path(note_id).write_text(
+    embedding_path(note_id, target_dir).write_text(
         json.dumps(payload, indent=2),
         encoding="utf-8",
     )
     return payload
 
 
-def is_embedding_current(note_id: str, content: str, model: str) -> bool:
+def is_embedding_current(note_id: str, content: str, model: str, embeddings_dir: Path | None = None) -> bool:
     """Return True if cached embedding matches content and model."""
-    cached = load_embedding(note_id)
+    cached = load_embedding(note_id, embeddings_dir)
     if cached is None:
         return False
     return cached.get("text_hash") == text_hash(content) and cached.get("model") == model

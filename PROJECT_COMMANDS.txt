@@ -1,0 +1,297 @@
+===============================================================================
+SECONDSELF (SECOND BRAIN) - COMPLETE COMMAND REFERENCE & DEPLOYMENT GUIDE
+===============================================================================
+Project Name : SecondSelf (AI-Powered Second Brain)
+Repository   : rammuthu1993/second-self
+Stack        : Python, Streamlit, Groq LLM (Llama-3), Sentence-Transformers, PyPDF
+
+This text file contains ALL essential commands required to set up, operate, test,
+manage, and deploy the SecondSelf project step-by-step from local development to production.
+
+-------------------------------------------------------------------------------
+TABLE OF CONTENTS
+-------------------------------------------------------------------------------
+1. Environment Setup & Installation Commands
+2. Project Configuration & API Key Setup
+3. Core Pipeline Commands (Capture, Classify, Link, Graph, Ask)
+4. Streamlit Web Dashboard Commands
+5. Testing & Quality Assurance Commands
+6. Full End-to-End Pipeline Execution Workflows
+7. Git Version Control Commands
+8. Complete Deployment Commands (Until Production Deploy)
+9. Maintenance & Troubleshooting Commands
+
+===============================================================================
+1. ENVIRONMENT SETUP & INSTALLATION COMMANDS
+===============================================================================
+
+# 1.1 Verify Python Version (Python 3.9+ required, 3.10+ recommended)
+python --version
+
+# 1.2 Create Python Virtual Environment (.venv)
+# Windows (PowerShell / CMD):
+python -m venv .venv
+
+# macOS / Linux:
+python3 -m venv .venv
+
+# 1.3 Activate Virtual Environment
+# Windows PowerShell:
+.\.venv\Scripts\Activate.ps1
+
+# Windows CMD:
+.\.venv\Scripts\activate.bat
+
+# macOS / Linux:
+source .venv/bin/activate
+
+# 1.4 Upgrade Pip & Core Tools
+python -m pip install --upgrade pip setuptools wheel
+
+# 1.5 Install Project Dependencies
+pip install -r requirements.txt
+
+# 1.6 Verify Installed Packages
+pip list
+
+===============================================================================
+2. PROJECT CONFIGURATION & API KEY SETUP
+===============================================================================
+
+# 2.1 Copy Environment Template to Create `.env` File
+# Windows PowerShell:
+Copy-Item .env.example .env
+
+# Windows CMD:
+copy .env.example .env
+
+# Linux / macOS:
+cp .env.example .env
+
+# 2.2 Add your Groq API Key to `.env`
+# Open .env in your text editor and set:
+# GROQ_API_KEY=gsk_your_actual_groq_api_key_here
+
+# 2.3 Run Setup Script to Initialize Required Directory Structure
+python scripts/setup.py
+
+# Alternatively, initialize directories programmatically via Python:
+python -c "import config; config.ensure_directories(); print('Directories ready!')"
+
+===============================================================================
+3. CORE PIPELINE COMMANDS (CAPTURE, CLASSIFY, LINK, GRAPH, ASK)
+===============================================================================
+
+# -----------------------------------------------------------------------------
+# 3.1 CAPTURE CLI (capture.py) - Save raw ideas, notes, web links, or files
+# -----------------------------------------------------------------------------
+
+# Capture a quick text note:
+python capture.py note "Learned how vector embeddings enable semantic search in RAG."
+
+# Capture a multi-word note:
+python capture.py note Read paper on attention mechanisms and transformer architectures
+
+# Capture a note AND immediately auto-classify it into the wiki:
+python capture.py note "Drafting Q3 product launch roadmap" --wiki
+
+# Capture a web link (extracts title & saves URL):
+python capture.py link "https://docs.streamlit.io"
+
+# Capture a local PDF or text file (extracts text & copies binary to assets/files/):
+python capture.py file "C:\Users\Admin\Documents\sample_report.pdf"
+
+# -----------------------------------------------------------------------------
+# 3.2 CLASSIFY CLI (classify.py) - Auto-file raw captures using Groq LLM (PARA)
+# -----------------------------------------------------------------------------
+
+# Process & classify ALL unprocessed raw captures in raw/ directory:
+python classify.py
+
+# Classify a specific raw capture note by its unique ID:
+python classify.py --id 20260725_195939_3509ae65
+
+# -----------------------------------------------------------------------------
+# 3.3 LINK CLI (link.py) - Discover semantic connections & add [[wikilinks]]
+# -----------------------------------------------------------------------------
+
+# Auto-link wiki notes using default similarity threshold (0.72):
+python link.py
+
+# Auto-link wiki notes with a custom similarity threshold (e.g., 0.65 for broader links):
+python link.py --threshold 0.65
+
+# -----------------------------------------------------------------------------
+# 3.4 BUILD GRAPH CLI (build_graph.py) - Construct graph.json visualization index
+# -----------------------------------------------------------------------------
+
+# Parse wiki notes & generated links to build data/graph.json:
+python build_graph.py
+
+# -----------------------------------------------------------------------------
+# 3.5 ASK CLI (ask.py) - Perform RAG Q&A across your knowledge base
+# -----------------------------------------------------------------------------
+
+# Ask your Second Brain a question:
+python ask.py "What notes do I have about Python and Streamlit?"
+
+# Ask a complex contextual question:
+python ask.py "Summarize my notes on project architecture and data pipelines."
+
+===============================================================================
+4. STREAMLIT WEB DASHBOARD COMMANDS
+===============================================================================
+
+# 4.1 Launch Streamlit Web Application (Default URL: http://localhost:8501)
+streamlit run app.py
+
+# 4.2 Launch Streamlit on a Custom Port
+streamlit run app.py --server.port 8080
+
+# 4.3 Launch Streamlit accessible on local network IP
+streamlit run app.py --server.address 0.0.0.0 --server.port 8501
+
+# 4.4 Run Streamlit in Headless Mode (for servers/containers without browser)
+streamlit run app.py --server.headless true
+
+===============================================================================
+5. TESTING & QUALITY ASSURANCE COMMANDS
+===============================================================================
+
+# 5.1 Run All Unit Tests (Built-in unittest runner)
+python -m unittest discover tests
+
+# 5.2 Run Individual Test Suite Files
+python -m unittest tests/test_capture.py
+python -m unittest tests/test_classify.py
+python -m unittest tests/test_link.py
+python -m unittest tests/test_graph.py
+python -m unittest tests/test_ask.py
+
+# 5.3 Run Tests with Detailed Output (Verbose)
+python -m unittest discover tests -v
+
+# 5.4 Run Tests using Pytest (if pytest installed)
+pytest tests/
+
+===============================================================================
+6. FULL END-TO-END PIPELINE EXECUTION WORKFLOWS
+===============================================================================
+
+# 6.1 Complete Sequential Execution Workflow (PowerShell / Bash)
+# Step 1: Ensure setup
+python scripts/setup.py
+
+# Step 2: Capture new knowledge items
+python capture.py note "Designing microservices event bus with Kafka"
+python capture.py link "https://groq.com"
+
+# Step 3: Classify raw captures into PARA wiki categories
+python classify.py
+
+# Step 4: Generate semantic links across wiki notes
+python link.py
+
+# Step 5: Regenerate knowledge graph structure
+python build_graph.py
+
+# Step 6: Query Second Brain via CLI
+python ask.py "What event bus technology am I researching?"
+
+# Step 7: Launch dashboard to explore visually
+streamlit run app.py
+
+# 6.2 One-Liner PowerShell Command Chain for Full Pipeline
+python capture.py note "Testing automated pipeline sequence"; python classify.py; python link.py; python build_graph.py; python ask.py "What pipeline was tested?"
+
+===============================================================================
+7. GIT VERSION CONTROL COMMANDS
+===============================================================================
+
+# 7.1 Check Repository Status
+git status
+
+# 7.2 View Uncommitted Changes
+git diff
+
+# 7.3 Stage All Project Files (excluding .venv and secrets via .gitignore)
+git add .
+
+# 7.4 Commit Changes with Descriptive Message
+git commit -m "feat: complete SecondSelf RAG pipeline, test suite, and command docs"
+
+# 7.5 Push to GitHub Main Branch
+git push origin main
+
+===============================================================================
+8. COMPLETE DEPLOYMENT COMMANDS (UNTIL PRODUCTION DEPLOY)
+===============================================================================
+
+-------------------------------------------------------------------------------
+METHOD A: STREAMLIT COMMUNITY CLOUD (RECOMMENDED & FREE)
+-------------------------------------------------------------------------------
+1. Push your repository to GitHub:
+   git add .
+   git commit -m "ready for streamlit cloud deployment"
+   git push origin main
+
+2. Go to https://share.streamlit.io and sign in with GitHub.
+3. Click "New App", select repository `rammuthu1993/second-self`, branch `main`, main file path `app.py`.
+4. Under "Advanced settings...", add your Secrets:
+   GROQ_API_KEY = "gsk_your_actual_groq_api_key_here"
+5. Click "Deploy!" -> Your app will be live at a public URL (e.g. https://second-self.streamlit.app).
+
+-------------------------------------------------------------------------------
+METHOD B: HUGGING FACE SPACES DEPLOYMENT
+-------------------------------------------------------------------------------
+1. Create a new Space on Hugging Face (https://huggingface.co/new-space).
+2. Select Space SDK: Streamlit.
+3. Clone HF Space repository locally:
+   git clone https://huggingface.co/spaces/YOUR_USERNAME/second-self
+4. Copy app files into cloned folder, then push:
+   git add .
+   git commit -m "deploy to huggingface spaces"
+   git push
+5. In Hugging Face Space settings, add Environment Variable:
+   Key: GROQ_API_KEY | Value: gsk_your_key_here
+
+-------------------------------------------------------------------------------
+METHOD C: DOCKER CONTAINER DEPLOYMENT (LOCAL / CLOUD VPS / AWS / GCP)
+-------------------------------------------------------------------------------
+# 1. Build Docker Image
+docker build -t second-self:latest .
+
+# 2. Run Container Locally
+docker run -d -p 8501:8501 --env-file .env --name second-self-container second-self:latest
+
+# 3. Stop & Remove Container
+docker stop second-self-container
+docker rm second-self-container
+
+-------------------------------------------------------------------------------
+METHOD D: RENDER / RAILWAY DEPLOYMENT
+-------------------------------------------------------------------------------
+1. Connect GitHub repo to Render (https://render.com) or Railway (https://railway.app).
+2. Set Environment Variables: GROQ_API_KEY = gsk_your_key_here
+3. Set Build Command: pip install -r requirements.txt
+4. Set Start Command: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+
+===============================================================================
+9. MAINTENANCE & TROUBLESHOOTING COMMANDS
+===============================================================================
+
+# Clean cached Python bytecode files
+# Windows PowerShell:
+Get-ChildItem -Recurse -Filter "*.pyc" | Remove-Item -Force
+Get-ChildItem -Recurse -Filter "__pycache__" | Remove-Item -Recurse -Force
+
+# Linux / macOS:
+find . -type d -name "__pycache__" -exec rm -r {} +
+
+# Reset generated graph and index data (if needed)
+# Windows PowerShell:
+Remove-Item -Force data\graph.json, data\index.json -ErrorAction SilentlyContinue
+
+# Verify Groq API connection and environment variables
+python -c "import config; config.validate_groq_api_key(); print('GROQ API Key is valid!')"
+===============================================================================

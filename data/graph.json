@@ -1,0 +1,217 @@
+{
+  "nodes": [
+    {
+      "id": "fff8cc46-0cfe-4454-8a6f-ef6223af6bea",
+      "slug": "hello-world-fff8cc46",
+      "label": "Hello world",
+      "category": "Archives",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Archives/hello-world-fff8cc46.md",
+      "summary": "Hello world",
+      "preview": "Hello world"
+    },
+    {
+      "id": "75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "slug": "muthukumar-ramasamy-75bff0f2",
+      "label": "Muthukumar Ramasamy",
+      "category": "Archives",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Archives/muthukumar-ramasamy-75bff0f2.md",
+      "summary": "Muthukumar Ramasamy",
+      "preview": "Muthukumar Ramasamy"
+    },
+    {
+      "id": "eda04717-e392-4ea0-b54b-e5970e719879",
+      "slug": "my-name-is-muthukumar-ramasamy-eda04717",
+      "label": "My name is Muthukumar Ramasamy",
+      "category": "Archives",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Archives/my-name-is-muthukumar-ramasamy-eda04717.md",
+      "summary": "My name is Muthukumar Ramasamy",
+      "preview": "My name is Muthukumar Ramasamy"
+    },
+    {
+      "id": "eda04717-e392-4ea0-b54b-e5970e719879-my-name-is-muthukumar-ramasamy-summary-note-eda04717",
+      "slug": "my-name-is-muthukumar-ramasamy-summary-note-eda04717",
+      "label": "My name is Muthukumar Ramasamy summary note",
+      "category": "Archives",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Archives/my-name-is-muthukumar-ramasamy-summary-note-eda04717.md",
+      "summary": "My name is Muthukumar Ramasamy summary note",
+      "preview": "My name is Muthukumar Ramasamy summary note"
+    },
+    {
+      "id": "ebd83f9b-3a6e-4bae-8057-ac3d8088c065",
+      "slug": "my-role-is-angular-developer-ebd83f9b",
+      "label": "my role is angular developer",
+      "category": "Archives",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Archives/my-role-is-angular-developer-ebd83f9b.md",
+      "summary": "my role is angular developer",
+      "preview": "my role is angular developer"
+    },
+    {
+      "id": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5",
+      "slug": "binary-file-copied-to-assetsfiles35e0b477-muthukumar-resumed-35e0b477",
+      "label": "[Binary file copied to assets/files/35e0b477_Muthukumar_resume.docx]",
+      "category": "Areas",
+      "tags": [
+        "resume"
+      ],
+      "path": "wiki/Areas/binary-file-copied-to-assetsfiles35e0b477-muthukumar-resumed-35e0b477.md",
+      "summary": "[Binary file copied to assets/files/35e0b477_Muthukumar_resume.docx]",
+      "preview": "[Binary file copied to assets/files/35e0b477_Muthukumar_resume.docx]"
+    },
+    {
+      "id": "4f5d4cab-5451-4297-b7ed-628c4153a494",
+      "slug": "binary-file-copied-to-assetsfiles4f5d4cab-muthukumar-resumed-4f5d4cab",
+      "label": "[Binary file copied to assets/files/4f5d4cab_Muthukumar_resume.docx] Search all Markdown (.md) files inside the wiki...",
+      "category": "Areas",
+      "tags": [
+        "resume"
+      ],
+      "path": "wiki/Areas/binary-file-copied-to-assetsfiles4f5d4cab-muthukumar-resumed-4f5d4cab.md",
+      "summary": "[Binary file copied to assets/files/4f5d4cab_Muthukumar_resume.docx] Search all Markdown (.md) files inside the wiki...",
+      "preview": "[Binary file copied to assets/files/4f5d4cab_Muthukumar_resume.docx] Search all Markdown (.md) files inside the wiki..."
+    },
+    {
+      "id": "5f2197a7-3558-47dd-acf3-927bc4bd2d19",
+      "slug": "httpswwwlinkedincominr-muthu-kumar-b93280319-5f2197a7",
+      "label": "https://www.linkedin.com/in/r-muthu-kumar-b93280319/",
+      "category": "Areas",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Areas/httpswwwlinkedincominr-muthu-kumar-b93280319-5f2197a7.md",
+      "summary": "https://www.linkedin.com/in/r-muthu-kumar-b93280319/",
+      "preview": "https://www.linkedin.com/in/r-muthu-kumar-b93280319/"
+    },
+    {
+      "id": "f11e011f-8cb5-4746-bd1d-af1e5c081732",
+      "slug": "httpswwwlinkedincominr-muthu-kumar-b93280319-f11e011f",
+      "label": "https://www.linkedin.com/in/r-muthu-kumar-b93280319/",
+      "category": "Areas",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Areas/httpswwwlinkedincominr-muthu-kumar-b93280319-f11e011f.md",
+      "summary": "https://www.linkedin.com/in/r-muthu-kumar-b93280319/",
+      "preview": "https://www.linkedin.com/in/r-muthu-kumar-b93280319/"
+    },
+    {
+      "id": "2ea5f6c3-8ef7-4548-a9d7-c7a2e2905a9e",
+      "slug": "my-linkedin-link-is-httpswwwlinkedincominr-muthu-kumar-b9328-2ea5f6c3",
+      "label": "my linkedin link is https://www.linkedin.com/in/r-muthu-kumar-b93280319/",
+      "category": "Areas",
+      "tags": [
+        "notes"
+      ],
+      "path": "wiki/Areas/my-linkedin-link-is-httpswwwlinkedincominr-muthu-kumar-b9328-2ea5f6c3.md",
+      "summary": "my linkedin link is https://www.linkedin.com/in/r-muthu-kumar-b93280319/",
+      "preview": "my linkedin link is https://www.linkedin.com/in/r-muthu-kumar-b93280319/"
+    },
+    {
+      "id": "3509ae65-330e-4d6e-a77c-32bab6fc3bfe",
+      "slug": "meeting-notes-kickoff-with-product-team-discussed-roadmap-an-3509ae65",
+      "label": "Meeting notes: kickoff with product team \u2014 discussed roadmap and next steps",
+      "category": "Projects",
+      "tags": [
+        "notes",
+        "meeting"
+      ],
+      "path": "wiki/Projects/meeting-notes-kickoff-with-product-team-discussed-roadmap-an-3509ae65.md",
+      "summary": "Meeting notes: kickoff with product team \u2014 discussed roadmap and next steps",
+      "preview": "Meeting notes: kickoff with product team \u2014 discussed roadmap and next steps"
+    }
+  ],
+  "edges": [
+    {
+      "id": "fff8cc46-0cfe-4454-8a6f-ef6223af6bea-3509ae65-330e-4d6e-a77c-32bab6fc3bfe",
+      "source": "fff8cc46-0cfe-4454-8a6f-ef6223af6bea",
+      "target": "3509ae65-330e-4d6e-a77c-32bab6fc3bfe",
+      "type": "explicit"
+    },
+    {
+      "id": "fff8cc46-0cfe-4454-8a6f-ef6223af6bea-75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "source": "fff8cc46-0cfe-4454-8a6f-ef6223af6bea",
+      "target": "75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "type": "explicit"
+    },
+    {
+      "id": "eda04717-e392-4ea0-b54b-e5970e719879-35e0b477-6504-4ca2-b9cf-0c24ba510cd5",
+      "source": "eda04717-e392-4ea0-b54b-e5970e719879",
+      "target": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5",
+      "type": "explicit"
+    },
+    {
+      "id": "eda04717-e392-4ea0-b54b-e5970e719879-4f5d4cab-5451-4297-b7ed-628c4153a494",
+      "source": "eda04717-e392-4ea0-b54b-e5970e719879",
+      "target": "4f5d4cab-5451-4297-b7ed-628c4153a494",
+      "type": "explicit"
+    },
+    {
+      "id": "eda04717-e392-4ea0-b54b-e5970e719879-75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "source": "eda04717-e392-4ea0-b54b-e5970e719879",
+      "target": "75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "type": "explicit"
+    },
+    {
+      "id": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5-4f5d4cab-5451-4297-b7ed-628c4153a494",
+      "source": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5",
+      "target": "4f5d4cab-5451-4297-b7ed-628c4153a494",
+      "type": "explicit"
+    },
+    {
+      "id": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5-75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "source": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5",
+      "target": "75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "type": "explicit"
+    },
+    {
+      "id": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5-eda04717-e392-4ea0-b54b-e5970e719879-my-name-is-muthukumar-ramasamy-summary-note-eda04717",
+      "source": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5",
+      "target": "eda04717-e392-4ea0-b54b-e5970e719879-my-name-is-muthukumar-ramasamy-summary-note-eda04717",
+      "type": "explicit"
+    },
+    {
+      "id": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5-eda04717-e392-4ea0-b54b-e5970e719879",
+      "source": "35e0b477-6504-4ca2-b9cf-0c24ba510cd5",
+      "target": "eda04717-e392-4ea0-b54b-e5970e719879",
+      "type": "explicit"
+    },
+    {
+      "id": "f11e011f-8cb5-4746-bd1d-af1e5c081732-5f2197a7-3558-47dd-acf3-927bc4bd2d19",
+      "source": "f11e011f-8cb5-4746-bd1d-af1e5c081732",
+      "target": "5f2197a7-3558-47dd-acf3-927bc4bd2d19",
+      "type": "explicit"
+    },
+    {
+      "id": "3509ae65-330e-4d6e-a77c-32bab6fc3bfe-75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "source": "3509ae65-330e-4d6e-a77c-32bab6fc3bfe",
+      "target": "75bff0f2-33b0-4aad-a86d-39aa2633972e",
+      "type": "explicit"
+    },
+    {
+      "id": "3509ae65-330e-4d6e-a77c-32bab6fc3bfe-fff8cc46-0cfe-4454-8a6f-ef6223af6bea",
+      "source": "3509ae65-330e-4d6e-a77c-32bab6fc3bfe",
+      "target": "fff8cc46-0cfe-4454-8a6f-ef6223af6bea",
+      "type": "explicit"
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-07-31T15:21:17.804800+00:00",
+    "node_count": 11,
+    "edge_count": 12,
+    "source": "build_graph.py"
+  }
+}
